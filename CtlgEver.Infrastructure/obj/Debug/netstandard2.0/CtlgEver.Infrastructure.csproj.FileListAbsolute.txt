@@ -1,0 +1,11 @@
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\bin\Debug\netstandard2.0\CtlgEver.Infrastructure.deps.json
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\bin\Debug\netstandard2.0\CtlgEver.Infrastructure.dll
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\bin\Debug\netstandard2.0\CtlgEver.Infrastructure.pdb
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\bin\Debug\netstandard2.0\CtlgEver.Core.dll
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\bin\Debug\netstandard2.0\CtlgEver.Core.pdb
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\obj\Debug\netstandard2.0\CtlgEver.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\obj\Debug\netstandard2.0\CtlgEver.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\obj\Debug\netstandard2.0\CtlgEver.Infrastructure.AssemblyInfo.cs
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\obj\Debug\netstandard2.0\CtlgEver.Infrastructure.csproj.CopyComplete
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\obj\Debug\netstandard2.0\CtlgEver.Infrastructure.dll
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\obj\Debug\netstandard2.0\CtlgEver.Infrastructure.pdb

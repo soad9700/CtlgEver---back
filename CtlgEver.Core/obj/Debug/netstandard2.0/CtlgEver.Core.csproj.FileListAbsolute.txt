@@ -1,0 +1,9 @@
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Core\bin\Debug\netstandard2.0\CtlgEver.Core.deps.json
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Core\bin\Debug\netstandard2.0\CtlgEver.Core.dll
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Core\bin\Debug\netstandard2.0\CtlgEver.Core.pdb
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Core\obj\Debug\netstandard2.0\CtlgEver.Core.csprojResolveAssemblyReference.cache
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Core\obj\Debug\netstandard2.0\CtlgEver.Core.csproj.CoreCompileInputs.cache
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Core\obj\Debug\netstandard2.0\CtlgEver.Core.AssemblyInfoInputs.cache
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Core\obj\Debug\netstandard2.0\CtlgEver.Core.AssemblyInfo.cs
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Core\obj\Debug\netstandard2.0\CtlgEver.Core.dll
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Core\obj\Debug\netstandard2.0\CtlgEver.Core.pdb
