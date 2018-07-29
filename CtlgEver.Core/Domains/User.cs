@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace CtlgEver.Core.Domains
 {
@@ -14,6 +15,7 @@ namespace CtlgEver.Core.Domains
         public byte [] PasswordSalt {get; private set;}
         public bool Deleted { get; private set; }
         public bool Activated { get; private set; }
+        public IEnumerable<Sheet> Sheets {get; private set;}
         protected User(){}
         public User(string role, string name, string surname, string email, string password)
         {
