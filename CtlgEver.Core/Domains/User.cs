@@ -5,7 +5,7 @@ namespace CtlgEver.Core.Domains
 {
     public class User
     {
-        public int Id {get; private set;}
+        public int UserId {get; private set;}
         public string Role {get; private set;}
         public string Name {get; private set;}
         public string Surname {get; private set;}

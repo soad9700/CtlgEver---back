@@ -9,3 +9,4 @@ C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\obj\Debug\netstan
 C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\obj\Debug\netstandard2.0\CtlgEver.Infrastructure.csproj.CopyComplete
 C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\obj\Debug\netstandard2.0\CtlgEver.Infrastructure.dll
 C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\obj\Debug\netstandard2.0\CtlgEver.Infrastructure.pdb
+C:\Users\Filip\Desktop\CtlgEver - back\CtlgEver.Infrastructure\obj\Debug\netstandard2.0\CtlgEver.Infrastructure.csprojAssemblyReference.cache
