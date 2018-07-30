@@ -25,6 +25,12 @@ namespace CtlgEver.Core.Domains
             Email = email;
             Password = password;
         }
+        public void Update(string name, string surname, string email)
+        {
+            Name = name;
+            Surname = surname;
+            Email = email;
+        }
 
     }
 }
