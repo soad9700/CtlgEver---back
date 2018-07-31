@@ -2,45 +2,48 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using CtlgEver.Core.Domains;
 using CtlgEver.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CtlgEver.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        CtlgEverContext _context;
+        private readonly CtlgEverContext _context;
         public UserRepository(CtlgEverContext context)
         {
             _context = context;
         }
 
-        public Task AddAsync(User user)
+        public async Task AddAsync(User user)
         {
-            throw new System.NotImplementedException();
+            _context.Users.Add(user);
+            await Task.CompletedTask;
         }
 
-        public Task<IEnumerable<User>> BrowseAsync()
+        public async Task DeleteAsync(User user)
         {
-            throw new System.NotImplementedException();
+            _context.Users.Remove(user);
+            await Task.CompletedTask;
         }
 
-        public Task DeleteAsync(User user)
+        public async Task<User> GetByEmailAsync(string email, bool IfNoTracking = false)
         {
-            throw new System.NotImplementedException();
+            if(IfNoTracking)
+                return await _context.Users.AsNoTracking().SingleOrDefaultAsync(u => u.Email == email);
+            return await _context.Users.SingleOrDefaultAsync (u => u.Email == email);
         }
 
-        public Task<User> GetByEmailAsync(bool IsNoTracking)
+        public async Task<User> GetByIdAsync(int id, bool IfNoTracking = false)
         {
-            throw new System.NotImplementedException();
+            if(IfNoTracking)
+                return await _context.Users.AsNoTracking().SingleOrDefaultAsync(u => u.UserId == id);
+            return await _context.Users.SingleOrDefaultAsync (u => u.UserId == id);
         }
 
-        public Task<User> GetByIdAsync(bool IsNoTracking)
+        public async Task UpdateAsync(User user)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public Task UpdateAsync(User user)
-        {
-            throw new System.NotImplementedException();
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
         }
     }
 }

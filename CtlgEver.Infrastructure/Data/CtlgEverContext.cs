@@ -14,8 +14,8 @@ namespace CtlgEver.Infrastructure.Data
         {
         }
 
-        DbSet<User> Users {get; set;}
-        DbSet<Sheet> Sheets {get; set;}
+        public DbSet<User> Users {get; set;}
+        public DbSet<Sheet> Sheets {get; set;}
 
         public CtlgEverContext (DbContextOptions<CtlgEverContext> options) : base (options) { }
         protected override void OnModelCreating (ModelBuilder modelBuilder)
