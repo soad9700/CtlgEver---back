@@ -10,12 +10,12 @@ namespace CtlgEver.Infrastructure.Services
     public class UserService : IUserService
     {
         private readonly IMapper _mapper;
-        private readonly UserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UserService (IMapper mapper, UserRepository userRepository)
+        public UserService (IMapper mapper, IUserRepository userRepository)
         {
-            mapper = _mapper;
-            userRepository = _userRepository;
+            _mapper = mapper;
+            _userRepository = userRepository;
         }
 
         public async Task DeleteAsync(int id)

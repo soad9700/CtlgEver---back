@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CtlgEver.Infrastructure.Data;
+using CtlgEver.Infrastructure.Mappers;
 using CtlgEver.Infrastructure.Repositories;
 using CtlgEver.Infrastructure.Services;
 using CtlgEver.Infrastructure.Services.Interfaces;
@@ -37,6 +38,7 @@ namespace CtlgEver.Api
             services.AddScoped<IUserRepository,UserRepository>();
 
             services.AddScoped<IUserService,UserService>();
+            services.AddSingleton(AutoMapperConfig.Initialize());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

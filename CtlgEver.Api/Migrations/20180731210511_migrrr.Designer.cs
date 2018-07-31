@@ -4,14 +4,16 @@ using CtlgEver.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CtlgEver.Api.Migrations
 {
     [DbContext(typeof(CtlgEverContext))]
-    partial class CtlgEverContextModelSnapshot : ModelSnapshot
+    [Migration("20180731210511_migrrr")]
+    partial class migrrr
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
