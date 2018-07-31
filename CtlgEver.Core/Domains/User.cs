@@ -10,7 +10,6 @@ namespace CtlgEver.Core.Domains
         public string Name {get; private set;}
         public string Surname {get; private set;}
         public string Email {get; private set;}
-        public string Password {get; private set;}
         public byte [] PasswordHash {get; private set;}
         public byte [] PasswordSalt {get; private set;}
         public bool Deleted { get; private set; }
@@ -23,13 +22,20 @@ namespace CtlgEver.Core.Domains
             Name = name;
             Surname = surname;
             Email = email;
-            Password = password;
+            CreatePasswordHash(password);
         }
         public void Update(string name, string surname, string email)
         {
             Name = name;
             Surname = surname;
             Email = email;
+        }
+
+        private void CreatePasswordHash (string password) {
+            using (var hmac = new System.Security.Cryptography.HMACSHA512 ()) {
+                PasswordSalt = hmac.Key;
+                PasswordHash = hmac.ComputeHash (System.Text.Encoding.UTF8.GetBytes (password));
+            }
         }
 
     }

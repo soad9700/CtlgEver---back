@@ -1,13 +1,16 @@
 using AutoMapper;
+using CtlgEver.Core.Domains;
+using CtlgEver.Infrastructure.DTO;
 
 namespace CtlgEver.Infrastructure.Mappers
 {
     public static class AutoMapperConfig
-    {/* 
+    {
         public static IMapper Initialize () =>
-        new MapperConfiguration (cfg => 
+        new MapperConfiguration (cfg =>
         {
-            .cfg.CreateMap<>;
-        }); */
+            cfg.CreateMap<User,UserDto>();
+        })
+        .CreateMapper();
     }
 }
