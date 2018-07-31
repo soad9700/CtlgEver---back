@@ -6,10 +6,10 @@ namespace CtlgEver.Infrastructure.Services.Interfaces
 {
     public interface IUserService
     {
-        Task RegisterAsync(User user);
-        Task DeleteAsync(User user);
-        Task GetByIdAsync(UserDto user);
-        Task GetByEmailAsync(UserDto user);
-        Task UpdateAsync(User user);
+        Task RegisterAsync(string name, string surname, string email, string password);
+        Task DeleteAsync(int id);
+        Task<UserDto> GetByIdAsync(int id);
+        Task<UserDto> GetByEmailAsync(string email);
+        /* Task UpdateAsync(int id, string name, string surname); */
     }
 }

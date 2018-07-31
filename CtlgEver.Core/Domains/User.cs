@@ -16,19 +16,18 @@ namespace CtlgEver.Core.Domains
         public bool Activated { get; private set; }
         public IEnumerable<Sheet> Sheets {get; private set;}
         protected User(){}
-        public User(string role, string name, string surname, string email, string password)
+        public User(string name, string surname, string email, string password)
         {
-            Role = role;
+            Role = "user";
             Name = name;
             Surname = surname;
             Email = email;
             CreatePasswordHash(password);
         }
-        public void Update(string name, string surname, string email)
+        public void Update(string name, string surname)
         {
             Name = name;
             Surname = surname;
-            Email = email;
         }
 
         private void CreatePasswordHash (string password) {

@@ -18,29 +18,36 @@ namespace CtlgEver.Infrastructure.Services
             userRepository = _userRepository;
         }
 
-        public Task DeleteAsync(User user)
+        public async Task DeleteAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var user = await _userRepository.GetByIdAsync(id);
+            await _userRepository.DeleteAsync(user);
         }
 
-        public Task GetByEmailAsync(UserDto user)
+        public async Task<UserDto> GetByEmailAsync(string email)
         {
-            throw new System.NotImplementedException();
+            var user= await _userRepository.GetByEmailAsync(email);
+            return _mapper.Map<UserDto> (user);
         }
 
-        public Task GetByIdAsync(UserDto user)
+        public async Task<UserDto> GetByIdAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var user= await _userRepository.GetByIdAsync(id);
+            return _mapper.Map<UserDto> (user);
         }
 
-        public Task RegisterAsync(User user)
+        public async Task RegisterAsync(string name, string surname, string email, string password)
         {
-            throw new System.NotImplementedException();
+            var user = new User(name, surname, email, password);
+            await _userRepository.AddAsync(user);
         }
 
-        public Task UpdateAsync(User user)
+        //nie działa nie wiem czemu
+        /* public async Task UpdateAsync(int id, string name, string surname)
         {
-            throw new System.NotImplementedException();
-        }
+            var user = _userRepository.GetByIdAsync(id);
+            user.Update(name, surname);
+            await _userRepository.UpdateAsync(user);
+        } */
     }
 }

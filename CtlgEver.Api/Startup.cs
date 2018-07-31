@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CtlgEver.Infrastructure.Data;
 using CtlgEver.Infrastructure.Repositories;
+using CtlgEver.Infrastructure.Services;
+using CtlgEver.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +35,8 @@ namespace CtlgEver.Api
                 options.UseSqlServer (Configuration.GetConnectionString ("CtlgEverDatabase"),
                     b => b.MigrationsAssembly ("CtlgEver.Api")));
             services.AddScoped<IUserRepository,UserRepository>();
+
+            services.AddScoped<IUserService,UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
