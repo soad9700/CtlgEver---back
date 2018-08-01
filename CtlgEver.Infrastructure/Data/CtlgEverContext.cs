@@ -7,7 +7,6 @@ namespace CtlgEver.Infrastructure.Data
     {
         public CtlgEverContext()
         {
-  
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
