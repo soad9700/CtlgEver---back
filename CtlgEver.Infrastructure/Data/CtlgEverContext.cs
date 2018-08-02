@@ -22,7 +22,12 @@ namespace CtlgEver.Infrastructure.Data
             modelBuilder.Entity<User> ()
                 .HasMany<Sheet> (s => s.Sheets)
                 .WithOne (u => u.User)
-                .HasForeignKey(s => s.SheetId);
+                .HasForeignKey(s => s.SheetId)
+                .OnDelete (DeleteBehavior.Cascade);
+            modelBuilder.Entity<Sheet> ()
+                .HasOne<User> (u => u.User)
+                .WithMany (s => s.Sheets)
+                .OnDelete (DeleteBehavior.Cascade);
         }
     }
 }

@@ -5,6 +5,7 @@ namespace CtlgEver.Core.Domains
     public class Sheet
     {
         public int SheetId {get; private set;}
+        public int UserId {get; private set;}
         public string Name {get; private set;}
         public DateTime CreatedAt {get; private set;}
         public DateTime UpdatedAt {get; private set;}
