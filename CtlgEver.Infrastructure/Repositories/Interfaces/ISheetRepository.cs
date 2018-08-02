@@ -6,9 +6,9 @@ namespace CtlgEver.Infrastructure.Repositories.Interfaces
 {
     public interface ISheetRepository
     {
-        Task GetAsync(int id);
+        Task<Sheet> GetAsync(int id);
         Task<IEnumerable<Sheet>> BrowseByUserAsync(int userId);
-        Task CreateAsync(Sheet sheet);
+        Task AddAsync(Sheet sheet);
         Task UpdateAsync(Sheet sheet);
         Task DeleteAsync(Sheet sheet);
     }

@@ -12,9 +12,10 @@ namespace CtlgEver.Core.Domains
         public User User {get; private set;}
 
         protected Sheet (){}
-        public Sheet (string name)
+        public Sheet (string name, int userId)
         {
             Name = name;
+            UserId = userId;
             CreatedAt = DateTime.UtcNow;
         }
 

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CtlgEver.Infrastructure.Data;
 using CtlgEver.Infrastructure.Mappers;
 using CtlgEver.Infrastructure.Repositories;
+using CtlgEver.Infrastructure.Repositories.Interfaces;
 using CtlgEver.Infrastructure.Services;
 using CtlgEver.Infrastructure.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -35,7 +36,9 @@ namespace CtlgEver.Api
             services.AddDbContext<CtlgEverContext> (options =>
                 options.UseSqlServer (Configuration.GetConnectionString ("CtlgEverDatabase"),
                     b => b.MigrationsAssembly ("CtlgEver.Api")));
+
             services.AddScoped<IUserRepository,UserRepository>();
+            services.AddScoped<ISheetRepository,SheetRepository>();
 
             services.AddScoped<IUserService,UserService>();
             services.AddSingleton(AutoMapperConfig.Initialize());

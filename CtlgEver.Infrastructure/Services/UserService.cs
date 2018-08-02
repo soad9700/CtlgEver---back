@@ -42,12 +42,11 @@ namespace CtlgEver.Infrastructure.Services
             await _userRepository.AddAsync(user);
         }
 
-        //nie działa nie wiem czemu
-        /* public async Task UpdateAsync(int id, string name, string surname)
+        public async Task UpdateAsync(int id, string name, string surname)
         {
-            var user = _userRepository.GetByIdAsync(id);
+            var user = await _userRepository.GetByIdAsync(id);
             user.Update(name, surname);
             await _userRepository.UpdateAsync(user);
-        } */
+        }
     }
 }

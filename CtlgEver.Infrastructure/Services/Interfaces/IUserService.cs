@@ -10,6 +10,6 @@ namespace CtlgEver.Infrastructure.Services.Interfaces
         Task DeleteAsync(int id);
         Task<UserDto> GetByIdAsync(int id);
         Task<UserDto> GetByEmailAsync(string email);
-        /* Task UpdateAsync(int id, string name, string surname); */
+        Task UpdateAsync(int id, string name, string surname);
     }
 }

@@ -22,7 +22,7 @@ namespace CtlgEver.Infrastructure.Repositories
             return await Task.FromResult(sheets);
         }
 
-        public async Task CreateAsync(Sheet sheet)
+        public async Task AddAsync(Sheet sheet)
         {
             _context.Sheets.Add(sheet);
             await _context.SaveChangesAsync();
@@ -34,10 +34,9 @@ namespace CtlgEver.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task GetAsync(int id)
+        public async Task<Sheet> GetAsync(int id)
         {
-            var sheet = _context.Sheets.SingleOrDefaultAsync(i => i.SheetId == id);
-            await Task.FromResult(sheet);
+            return await _context.Sheets.SingleOrDefaultAsync(i => i.SheetId == id);
         }
 
         public async Task UpdateAsync(Sheet sheet)
