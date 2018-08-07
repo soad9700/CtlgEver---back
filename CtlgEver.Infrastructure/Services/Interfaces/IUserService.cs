@@ -7,6 +7,7 @@ namespace CtlgEver.Infrastructure.Services.Interfaces
     public interface IUserService
     {
         Task RegisterAsync(string name, string surname, string email, string password);
+        Task<User> LoginAsync(string email, string password);
         Task DeleteAsync(int id);
         Task<UserDto> GetByIdAsync(int id);
         Task<UserDto> GetByEmailAsync(string email);
