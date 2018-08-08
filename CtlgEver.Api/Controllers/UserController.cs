@@ -9,6 +9,7 @@ using CtlgEver.Infrastructure.Create;
 using CtlgEver.Infrastructure.JWT;
 using CtlgEver.Infrastructure.Services.Interfaces;
 using CtlgEver.Infrastructure.UserCommands;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
@@ -17,17 +18,16 @@ namespace CtlgEver.Api.Controllers
     [Route("controller")]
     public class UserController : Controller
     {
+        // private readonly IConfiguration _config;
         private readonly IJwtSettings _jwtSettings;
         private readonly IUserService _userService;
-        private IConfiguration  _config;
 
-        public UserController(IUserService userService, IConfiguration config, IJwtSettings jwtSettings)
+        public UserController(IUserService userService, IJwtSettings jwtSettings)
         {
             _jwtSettings = jwtSettings;
             _userService = userService;
-            _config = config;
         }
-
+        [Authorize]
         [HttpGet("name")]
         public async Task<IActionResult> Index () {
             await Task.CompletedTask;
@@ -47,11 +47,20 @@ namespace CtlgEver.Api.Controllers
             return Ok (token);
         }
 
-        [HttpPost]
+        [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] CreateUser command)
         {
-            await _userService.RegisterAsync(command.Name, command.Surname, command.Email, command.Password);
-            return StatusCode(201);
+            command.Email = command.Email.ToLower ();
+            if (await _userService.GetByEmailAsync (command.Email)!=null)
+                ModelState.AddModelError ("Email", "Email is already taken.");
+            if (!ModelState.IsValid)
+                return BadRequest (ModelState);
+            try {
+                await _userService.RegisterAsync (command.Email, command.Password, command.Name, command.Surname);
+                return StatusCode (201);
+            } catch (Exception e) {
+                return BadRequest (e.Message);
+            }
         }
         private async Task<string> GenerateToken (User user, IJwtSettings jwtSettings) {
             var tokenHandler = new JwtSecurityTokenHandler ();
@@ -70,6 +79,5 @@ namespace CtlgEver.Api.Controllers
             var token = tokenHandler.CreateToken (tokenDescriptor);
             return await Task.FromResult (tokenHandler.WriteToken (token));
         }
-
     }
 }

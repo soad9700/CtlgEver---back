@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CtlgEver.Infrastructure.Data;
+using CtlgEver.Infrastructure.JWT;
 using CtlgEver.Infrastructure.Mappers;
 using CtlgEver.Infrastructure.Repositories;
 using CtlgEver.Infrastructure.Repositories.Interfaces;
@@ -30,7 +31,7 @@ namespace CtlgEver.Api
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; set;}
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -57,7 +58,7 @@ namespace CtlgEver.Api
 
             services.AddScoped<IUserRepository,UserRepository>();
             services.AddScoped<ISheetRepository,SheetRepository>();
-
+            services.AddScoped<IJwtSettings,JwtSettings>();
             services.AddScoped<IUserService,UserService>();
             services.AddScoped<ISheetService,SheetService>();
 

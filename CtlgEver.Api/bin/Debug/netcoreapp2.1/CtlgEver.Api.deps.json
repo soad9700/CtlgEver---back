@@ -24,8 +24,10 @@
     ".NETCoreApp,Version=v2.1": {
       "CtlgEver.Api/1.0.0": {
         "dependencies": {
+          "AutoMapper": "7.0.1",
           "CtlgEver.Infrastructure": "1.0.0",
           "Microsoft.AspNetCore.App": "2.1.1",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "2.1.1",
           "Microsoft.EntityFrameworkCore.Design": "2.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "2.1.1",
@@ -236,6 +238,7 @@
         "dependencies": {
           "AutoMapper": "7.0.1",
           "CtlgEver.Core": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "2.1.1",
           "Microsoft.EntityFrameworkCore.Design": "2.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "2.1.1"
