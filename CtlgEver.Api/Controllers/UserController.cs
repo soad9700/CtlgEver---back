@@ -16,6 +16,7 @@ using Microsoft.IdentityModel.Tokens;
 namespace CtlgEver.Api.Controllers
 {
     [Route("controller")]
+    [RequireHttps]
     public class UserController : Controller
     {
         // private readonly IConfiguration _config;

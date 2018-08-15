@@ -55,6 +55,11 @@ namespace CtlgEver.Api
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
             };
             });
+            
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute ());
+            });
 
             services.AddScoped<IUserRepository,UserRepository>();
             services.AddScoped<ISheetRepository,SheetRepository>();
