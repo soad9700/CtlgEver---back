@@ -1,7 +1,9 @@
+using System;
 using System.Threading.Tasks;
 using AutoMapper;
 using CtlgEver.Core.Domains;
 using CtlgEver.Infrastructure.DTO;
+using CtlgEver.Infrastructure.EmailFactory.Interfaces;
 using CtlgEver.Infrastructure.Repositories;
 using CtlgEver.Infrastructure.Services.Interfaces;
 
@@ -11,11 +13,13 @@ namespace CtlgEver.Infrastructure.Services
     {
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
+        private readonly IUserEmailFactory _userEmailFactory;
 
-        public UserService (IMapper mapper, IUserRepository userRepository)
+        public UserService (IMapper mapper, IUserRepository userRepository, IUserEmailFactory userEmailFactory)
         {
             _mapper = mapper;
             _userRepository = userRepository;
+            _userEmailFactory = userEmailFactory;
         }
 
         public async Task<User> LoginAsync(string email, string password)
@@ -57,7 +61,9 @@ namespace CtlgEver.Infrastructure.Services
         public async Task RegisterAsync(string name, string surname, string email, string password)
         {
             var user = new User(name, surname, email, password);
+            var activationKey = Guid.NewGuid();
             await _userRepository.AddAsync(user);
+            await _userEmailFactory.SendActivationEmailAsync(user, activationKey);
         }
 
         public async Task UpdateAsync(int id, string name, string surname)

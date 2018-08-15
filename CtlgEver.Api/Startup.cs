@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CtlgEver.Infrastructure.Data;
+using CtlgEver.Infrastructure.EmailConfiguration;
+using CtlgEver.Infrastructure.EmailConfiguration.Interfaces;
+using CtlgEver.Infrastructure.EmailFactory;
+using CtlgEver.Infrastructure.EmailFactory.Interfaces;
 using CtlgEver.Infrastructure.JWT;
 using CtlgEver.Infrastructure.Mappers;
 using CtlgEver.Infrastructure.Repositories;
@@ -66,6 +70,9 @@ namespace CtlgEver.Api
             services.AddScoped<IJwtSettings,JwtSettings>();
             services.AddScoped<IUserService,UserService>();
             services.AddScoped<ISheetService,SheetService>();
+            services.AddScoped<IEmailConfiguration,EmailConfiguration>();
+            services.AddScoped<IEmailFactory,EmailFactory>();
+            services.AddScoped<IUserEmailFactory,UserEmailFactory>();
 
             services.AddSingleton(AutoMapperConfig.Initialize());
         }
